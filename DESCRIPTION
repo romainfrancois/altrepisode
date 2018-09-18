@@ -1,0 +1,17 @@
+Package: altrepisode
+Title: 'ALTREP' example
+Version: 0.0.0.9000
+Authors@R: c(
+    person("Romain", "François", email = "romain@rstudio.com", role = c("aut", "cre"))
+  )
+Description: Example of ALTREP use. 
+Depends: R (>= 3.5.0)
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+SystemRequirements: C++11
+LinkingTo: 
+    Rcpp
+Imports: 
+    Rcpp
+RoxygenNote: 6.0.1.9000
