@@ -72,16 +72,19 @@ void init_altrep_classes(DllInfo* dll){
   R_set_altreal_Get_region_method(altrep_stdvec_double_class, stdvec_double::Get_region);
 }
 
+//' @export
 // [[Rcpp::export]]
 SEXP stdvec_double(){
   return stdvec_double::Make();
 }
 
+//' @export
 // [[Rcpp::export]]
 void stdvec_double_reserve(SEXP vec, R_xlen_t size){
   stdvec_double::Get(vec)->data.reserve(size);
 }
 
+//' @export
 // [[Rcpp::export]]
 void stdvec_double_push_back(SEXP vec, double x){
   stdvec_double::Get(vec)->data.push_back(x);
