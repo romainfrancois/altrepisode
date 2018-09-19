@@ -25,6 +25,7 @@ x[2]
 
 set.seed(2)
 y <- rnorm(20)
+y
 
 # lazy abs version of y
 abs_y <- lazy_abs(y)
@@ -43,6 +44,7 @@ mean(abs_y)
 # we can combine both
 abs_x <- lazy_abs(x)
 .Internal(inspect(abs_x))
+
 mean(abs_x)
 .Internal(inspect(abs_x))
 ```
