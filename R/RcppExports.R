@@ -2,17 +2,12 @@
 # Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 #' @export
-stdvec_double <- function() {
-    .Call(`_altrepisode_stdvec_double`)
+doubles <- function() {
+    .Call(`_altrepisode_doubles`)
 }
 
 #' @export
-stdvec_double_reserve <- function(vec, size) {
-    invisible(.Call(`_altrepisode_stdvec_double_reserve`, vec, size))
-}
-
-#' @export
-stdvec_double_push_back <- function(vec, x) {
-    invisible(.Call(`_altrepisode_stdvec_double_push_back`, vec, x))
+doubles_example <- function() {
+    .Call(`_altrepisode_doubles_example`)
 }
 

@@ -18,10 +18,6 @@ knitr::opts_chunk$set(
 ```{r}
 library(altrepisode)
 
-x <- stdvec_double()
-stdvec_double_push_back(x, 2)
-stdvec_double_push_back(x, 3)
-
-x
+x <- doubles()
 .Internal(inspect(x))
 ```

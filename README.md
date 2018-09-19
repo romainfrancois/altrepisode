@@ -6,12 +6,7 @@
 ``` r
 library(altrepisode)
 
-x <- stdvec_double()
-stdvec_double_push_back(x, 2)
-stdvec_double_push_back(x, 3)
-
-x
-#> [1] 2 3
+x <- doubles()
 .Internal(inspect(x))
-#> @7fa8785282e0 14 REALSXP g0c0 [NAM(3)] (len=2, tl=0) 2,3
+#> @7f8028f94870 14 REALSXP g0c0 [NAM(3)] [31mstd::vector<double> (len=4, ptr=0x7f80268691c0)[39m
 ```

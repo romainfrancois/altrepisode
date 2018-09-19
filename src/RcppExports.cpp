@@ -5,43 +5,30 @@
 
 using namespace Rcpp;
 
-// stdvec_double
-SEXP stdvec_double();
-RcppExport SEXP _altrepisode_stdvec_double() {
+// doubles
+SEXP doubles();
+RcppExport SEXP _altrepisode_doubles() {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    rcpp_result_gen = Rcpp::wrap(stdvec_double());
+    rcpp_result_gen = Rcpp::wrap(doubles());
     return rcpp_result_gen;
 END_RCPP
 }
-// stdvec_double_reserve
-void stdvec_double_reserve(SEXP vec, R_xlen_t size);
-RcppExport SEXP _altrepisode_stdvec_double_reserve(SEXP vecSEXP, SEXP sizeSEXP) {
+// doubles_example
+SEXP doubles_example();
+RcppExport SEXP _altrepisode_doubles_example() {
 BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< SEXP >::type vec(vecSEXP);
-    Rcpp::traits::input_parameter< R_xlen_t >::type size(sizeSEXP);
-    stdvec_double_reserve(vec, size);
-    return R_NilValue;
-END_RCPP
-}
-// stdvec_double_push_back
-void stdvec_double_push_back(SEXP vec, double x);
-RcppExport SEXP _altrepisode_stdvec_double_push_back(SEXP vecSEXP, SEXP xSEXP) {
-BEGIN_RCPP
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< SEXP >::type vec(vecSEXP);
-    Rcpp::traits::input_parameter< double >::type x(xSEXP);
-    stdvec_double_push_back(vec, x);
-    return R_NilValue;
+    rcpp_result_gen = Rcpp::wrap(doubles_example());
+    return rcpp_result_gen;
 END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_altrepisode_stdvec_double", (DL_FUNC) &_altrepisode_stdvec_double, 0},
-    {"_altrepisode_stdvec_double_reserve", (DL_FUNC) &_altrepisode_stdvec_double_reserve, 2},
-    {"_altrepisode_stdvec_double_push_back", (DL_FUNC) &_altrepisode_stdvec_double_push_back, 2},
+    {"_altrepisode_doubles", (DL_FUNC) &_altrepisode_doubles, 0},
+    {"_altrepisode_doubles_example", (DL_FUNC) &_altrepisode_doubles_example, 0},
     {NULL, NULL, 0}
 };
 
