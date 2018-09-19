@@ -121,7 +121,7 @@ R_altrep_class_t stdvec_double::class_t;
 
 // Called the package is loaded (needs Rcpp 0.12.18.3)
 // [[Rcpp::init]]
-void init_altrep_classes(DllInfo* dll){
+void init_stdvec_double(DllInfo* dll){
   stdvec_double::Init(dll);
 }
 
@@ -134,7 +134,7 @@ SEXP doubles() {
   //
   // this uses `new` because we want the vector to survive
   // it is deleted when the altrep object is garbage collected
-  auto v = new std::vector<double> {0.0, 1.0, 2.0, 3.0};
+  auto v = new std::vector<double> {-2.0, -1.0, 0.0, 1.0, 2.0};
 
   // The altrep object owns the std::vector<double>
   return stdvec_double::Make(v, true);

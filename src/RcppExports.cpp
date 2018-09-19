@@ -5,6 +5,17 @@
 
 using namespace Rcpp;
 
+// lazy_abs
+SEXP lazy_abs(SEXP x);
+RcppExport SEXP _altrepisode_lazy_abs(SEXP xSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< SEXP >::type x(xSEXP);
+    rcpp_result_gen = Rcpp::wrap(lazy_abs(x));
+    return rcpp_result_gen;
+END_RCPP
+}
 // doubles
 SEXP doubles();
 RcppExport SEXP _altrepisode_doubles() {
@@ -27,14 +38,17 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
+    {"_altrepisode_lazy_abs", (DL_FUNC) &_altrepisode_lazy_abs, 1},
     {"_altrepisode_doubles", (DL_FUNC) &_altrepisode_doubles, 0},
     {"_altrepisode_doubles_example", (DL_FUNC) &_altrepisode_doubles_example, 0},
     {NULL, NULL, 0}
 };
 
-void init_altrep_classes(DllInfo* dll);
+void init_lazy_abs_class(DllInfo* dll);
+void init_stdvec_double(DllInfo* dll);
 RcppExport void R_init_altrepisode(DllInfo *dll) {
     R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
     R_useDynamicSymbols(dll, FALSE);
-    init_altrep_classes(dll);
+    init_lazy_abs_class(dll);
+    init_stdvec_double(dll);
 }
