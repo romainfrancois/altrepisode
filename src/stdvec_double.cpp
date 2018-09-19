@@ -34,12 +34,12 @@ struct stdvec_double {
 
   // finalizer for the external pointer
   static void Finalize(SEXP xp){
-    delete reinterpret_cast<std::vector<double>*>(R_ExternalPtrAddr(xp));
+    delete static_cast<std::vector<double>*>(R_ExternalPtrAddr(xp));
   }
 
   // get the std::vector<double>* from the altrep object `x`
   static std::vector<double>* Ptr(SEXP x) {
-    return reinterpret_cast<std::vector<double>*>(R_ExternalPtrAddr(R_altrep_data1(x)));
+    return static_cast<std::vector<double>*>(R_ExternalPtrAddr(R_altrep_data1(x)));
   }
 
   // same, but as a reference, for convenience

@@ -42,7 +42,7 @@ struct lazy_abs {
       if (p_data1){
         // the data from data1 is contiguous, we can scan the values
         // from data1, apply the fabs function and fill data2
-        auto p = reinterpret_cast<const double*>(p_data1);
+        auto p = static_cast<const double*>(p_data1);
         std::transform(
           p, p + n, // the input range
           p_data2,  // the output start
@@ -115,7 +115,7 @@ struct lazy_abs {
       SEXP data1 = R_altrep_data1(vec);
       return ::fabs(REAL_ELT(data1, i));
     } else {
-      return reinterpret_cast<double*>(STDVEC_DATAPTR(data2))[i];
+      return static_cast<double*>(STDVEC_DATAPTR(data2))[i];
     }
   }
 
@@ -125,7 +125,7 @@ struct lazy_abs {
   // The return values is the number of elements the region truly is so the caller
   // must not go beyond
   static R_xlen_t Get_region(SEXP vec, R_xlen_t start, R_xlen_t size, double* out){
-    double* data = reinterpret_cast<double*>(Dataptr(vec, TRUE));
+    double* data = static_cast<double*>(Dataptr(vec, TRUE));
     out = data + start;
     R_xlen_t len = Length(vec) - start;
     return len > size ? len : size;
