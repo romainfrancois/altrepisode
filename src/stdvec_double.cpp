@@ -102,16 +102,16 @@ struct stdvec_double {
     class_t = R_make_altreal_class("stdvec_double", "altrepisode", dll);
 
     // altrep
-    R_set_altrep_Length_method(class_t, stdvec_double::Length);
-    R_set_altrep_Inspect_method(class_t, stdvec_double::Inspect);
+    R_set_altrep_Length_method(class_t, Length);
+    R_set_altrep_Inspect_method(class_t, Inspect);
 
     // altvec
-    R_set_altvec_Dataptr_method(class_t, stdvec_double::Dataptr);
-    R_set_altvec_Dataptr_or_null_method(class_t, stdvec_double::Dataptr_or_null);
+    R_set_altvec_Dataptr_method(class_t, Dataptr);
+    R_set_altvec_Dataptr_or_null_method(class_t, Dataptr_or_null);
 
     // altreal
-    R_set_altreal_Elt_method(class_t, stdvec_double::real_Elt);
-    R_set_altreal_Get_region_method(class_t, stdvec_double::Get_region);
+    R_set_altreal_Elt_method(class_t, real_Elt);
+    R_set_altreal_Get_region_method(class_t, Get_region);
   }
 
 };
@@ -168,6 +168,3 @@ SEXP doubles_example(){
 
   return res;
 }
-
-
-
