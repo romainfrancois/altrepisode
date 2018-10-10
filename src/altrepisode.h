@@ -1,9 +1,12 @@
 // to manipulate R objects, aka SEXP
 #include <R.h>
 #include <Rinternals.h>
+#include <Rversion.h>
 
 // because we need to initialize the altrep class
 #include <R_ext/Rdynload.h>
+
+#if R_VERSION < R_Version(3, 6, 0)
 
 // workaround because R's <R_ext/Altrep.h> not so conveniently uses `class`
 // as a variable name, and C++ is not happy about that
@@ -19,3 +22,7 @@ extern "C" {
 
 // undo the workaround
 #undef class
+
+#else
+  #include <R_ext/Altrep.h>
+#endif
