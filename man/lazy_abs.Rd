@@ -6,6 +6,9 @@
 \usage{
 lazy_abs(x)
 }
+\arguments{
+\item{x}{a numeric vector}
+}
 \description{
 lazy altrep version of abs
 }

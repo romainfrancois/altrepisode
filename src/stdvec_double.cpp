@@ -147,7 +147,6 @@ std::vector<double> randoms(int n){
   return v;
 }
 
-//' @export
 // [[Rcpp::export]]
 SEXP doubles_example(){
   // get a std::vector<double> from somewhere

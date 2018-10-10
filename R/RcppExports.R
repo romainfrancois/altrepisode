@@ -3,7 +3,9 @@
 
 #' lazy altrep version of abs
 #'
+#' @param x a numeric vector
 #' @export
+#'
 lazy_abs <- function(x) {
     .Call(`_altrepisode_lazy_abs`, x)
 }
@@ -15,7 +17,6 @@ doubles <- function() {
     .Call(`_altrepisode_doubles`)
 }
 
-#' @export
 doubles_example <- function() {
     .Call(`_altrepisode_doubles_example`)
 }

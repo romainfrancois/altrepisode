@@ -162,7 +162,9 @@ void init_lazy_abs_class(DllInfo* dll){
 
 //' lazy altrep version of abs
 //'
+//' @param x a numeric vector
 //' @export
+//'
 // [[Rcpp::export]]
 SEXP lazy_abs(SEXP x) {
   return lazy_abs::Make(x);
