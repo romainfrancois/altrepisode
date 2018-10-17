@@ -14,4 +14,4 @@ LinkingTo:
     Rcpp (>= 0.12.18.3)
 Imports: 
     Rcpp
-RoxygenNote: 6.1.0
+RoxygenNote: 6.1.0.9000

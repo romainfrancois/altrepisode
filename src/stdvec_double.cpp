@@ -56,7 +56,7 @@ struct stdvec_double {
 
   // What gets printed when .Internal(inspect()) is used
   static Rboolean Inspect(SEXP x, int pre, int deep, int pvec, void (*inspect_subtree)(SEXP, int, int, int)){
-    Rprintf("\033[31mstd::vector<double> (len=%d, ptr=%p)\033[39m\n", Length(x), Ptr(x));
+    Rprintf("std::vector<double> (len=%d, ptr=%p)\n", Length(x), Ptr(x));
     return TRUE;
   }
 
