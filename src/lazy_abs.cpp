@@ -76,10 +76,10 @@ struct lazy_abs {
     SEXP data2 = R_altrep_data2(x);
 
     if (data2 == R_NilValue) {
-      Rprintf("lazy(abs) (len=%d)\n");
+      Rprintf("lazy(abs) (len=%d)\n", LENGTH(data1));
       inspect_subtree(data1, pre, deep + 1, pvec);
     } else {
-      Rprintf("materialized lazy(abs) (len=%d)\n");
+      Rprintf("materialized lazy(abs) (len=%d)\n", LENGTH(data1));
       inspect_subtree(data1, pre, deep + 1, pvec);
       inspect_subtree(data2, pre, deep + 1, pvec);
     }
