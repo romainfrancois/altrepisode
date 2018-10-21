@@ -94,7 +94,7 @@ struct lazy_abs {
     SEXP data2 = R_altrep_data2(vec);
     if (data2 == R_NilValue) return nullptr;
 
-    return DATAPTR(data2);
+    return STDVEC_DATAPTR(data2);
   }
 
   // if the data has already been materialized, return that,
